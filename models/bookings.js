@@ -3,8 +3,8 @@
 const mongoose = require('mongoose');
 
 const bookingsSchema = mongoose.Schema({
-	trips:[{ type: mongoose.Schema.Types.ObjectId, ref: 'trips' }],
-    paid:Boolean
+	trip:{ type: mongoose.Schema.Types.ObjectId, ref: 'trips' },
+    isPaid:Boolean
 });
 
 const Booking = mongoose.model('bookings', bookingsSchema);

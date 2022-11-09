@@ -3,11 +3,16 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+require('./models/connection');
+
 var indexRouter = require('./routes/index');
 var tripsRouter = require('./routes/trips');
 var bookingsRouter = require('./routes/bookings');
 
 var app = express();
+
+const cors = require('cors');
+app.use(cors());
 
 app.use(logger('dev'));
 app.use(express.json());
