@@ -19,7 +19,7 @@ router.get('/:departure&:arrival&:date', (req, res) => {
         date: {$gte: dateInf, $lt: dateSup}
     })
         .then(trips => {
-            if (trips === []) {
+            if (trips.length === 0) {
                 res.json({ result: false, error: "no trips found" })
             }
             else {
